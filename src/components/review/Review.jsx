@@ -1,9 +1,9 @@
-import React, {useRef,useState} from 'react'
+import React from 'react'
 import './review.css'
 // Import Swiper React components
-import {ImQuotesLeft} from 'react-icons/im'
-import {ImQuotesRight} from 'react-icons/im'
-import {AiTwotoneStar} from 'react-icons/ai'
+import { ImQuotesLeft } from 'react-icons/im'
+import { ImQuotesRight } from 'react-icons/im'
+import { AiTwotoneStar } from 'react-icons/ai'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -13,10 +13,10 @@ import 'swiper/css/navigation';
 
 
 const Review = () => {
-    
+
   return (
     <>
-    <div className='review-section'>
+      <div className='review-section'>
         <div className="videoframe-text-container" data-aos="fade-up">
           <h1>Client <span className="highlight">reviews </span></h1>
           <p>here are some reviews left by our most profitable copytraders.</p>
@@ -62,7 +62,7 @@ const Review = () => {
               </div>
             </div>
             <div className="investor-review-container">
-             <span className='right-quote'>
+              <span className='right-quote'>
                 <ImQuotesLeft />
               </span>
               <p>SignalSynch has totally transformed how I navigate the markets. I wanted to begin trading but wasn’t sure how to proceed. Their copytrading system, guided by pros, let me tap into the skills of experienced traders without trading directly. I’ve noticed steady growth and feel confident managing my finances, even though I had no previous experience in trading.</p>
