@@ -4,8 +4,7 @@ import MiniSymbolOverviewWidget from '../../components/MiniSymbolOverviewWidget'
 import Header from '../../components/Header/Header'
 import Contact from '../../components/contact/Contact'
 import Footer from '../../components/footer/Footer'
-import Forexheatmap from '../../components/Forexheatmap'
-import Forexcrossmaps from '../../components/Forexcrossmaps'
+
 import { useNavigate } from 'react-router-dom'
 
 const Commodities = () => {
@@ -30,7 +29,7 @@ const Commodities = () => {
                     <div className='about-section forex-copy-trade-section'>
                         <div className="about-wrapper copy-trade-wrapper about-copy-trade-section forex-copy-trade-section">
                             <div className="about-page-img forex-img-container">
-                                <img src="/degiromock (3).png" className='forex-img ' data-aos="fade-up" />
+                                <img src="/degiromock (3).png" className='forex-img ' data-aos="fade-up" alt="" />
                             </div>
                             <div className="tesla-widget-text-container" data-aos="fade-up">
                                 <h1>commodities <span className="highlight">trading</span> </h1>
