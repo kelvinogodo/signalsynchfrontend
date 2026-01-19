@@ -67,7 +67,7 @@ const TradingViewWidget = () => {
         style={{ height: '100%', width: '100%' }}
       />
       <div className="tradingview-widget-copyright">
-        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+        <a href="https://www.tradingview.com/" rel="noopener noreferrer" target="_blank">
           <span className="blue-text">Track all markets on TradingView</span>
         </a>
       </div>

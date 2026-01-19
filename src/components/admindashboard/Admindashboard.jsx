@@ -61,6 +61,7 @@ const Admindashboard = ({ route }) => {
     setLoader(true)
     fetchUsers()
     fetchTraders()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // sweet alert function 

@@ -21,10 +21,10 @@ import Admindashboard from './components/admindashboard/Admindashboard';
 import Deposit from './components/deposit/Deposit';
 import Aboutpage from './pages/Aboutpage';
 import Faq from './pages/Faq';
-import Buybitcoin from './pages/Buybitcoin';
+
 import Policy from './pages/Policy';
 import './App.css'
-import CopytradePage from './pages/copytrade/CopytradePage';
+
 import Forex from './pages/forex/Forex';
 import Indices from './pages/indices/Indices';
 import Futures from './pages/futures/Futures';

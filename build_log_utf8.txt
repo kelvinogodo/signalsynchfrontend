@@ -1,0 +1,282 @@
+﻿
+> wealthflow@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+npm : Browserslist: 
+browsers data 
+(caniuse-lite) is 14 
+months old. Please 
+run:
+At line:1 char:1
++ npm run build > 
+build_log.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Browsersli   
+ st: b...ld. Pleas    
+e run::String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+  npx update-browsersl
+ist-db@latest
+  Why you should do 
+it regularly: https://
+github.com/browserslis
+t/update-db#readme
+Browserslist: 
+browsers data 
+(caniuse-lite) is 14 
+months old. Please 
+run:
+  npx update-browsersl
+ist-db@latest
+  Why you should do 
+it regularly: https://
+github.com/browserslis
+t/update-db#readme
+Compiled with warnings.
+
+[eslint] 
+src\App.js
+  Line 24:8:  'Buybitcoin' is defined but never used     no-unused-vars
+  Line 27:8:  'CopytradePage' is defined but never used  no-unused-vars
+
+src\components\AdminHeader.jsx
+  Line 5:10:   'FiAward' is defined but never used                                                                                        no-unused-vars
+  Line 6:10:   'GrTransaction' is defined but never used                                                                                  no-unused-vars
+  Line 8:10:   'AiOutlineSafety' is defined but never used                                                                                no-unused-vars
+  Line 45:7:   React Hook useEffect has missing dependencies: 'navigate' and 'route'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 48:12:  'bgColor' is assigned a value but never used                                                                               no-unused-vars
+
+src\components\Checkout.jsx
+  Line 2:8:    'Userdashboardheader' is defined but never used                                                                             no-unused-vars
+  Line 8:19:   'setActive' is assigned a value but never used                                                                              no-unused-vars
+  Line 10:19:  'setAmount' is assigned a value but never used                                                                              no-unused-vars
+  Line 16:7:   React Hook useEffect has missing dependencies: 'Active' and 'navigate'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\Deposit.jsx
+  Line 11:11:  'navigate' is assigned a value but never used   no-unused-vars
+  Line 12:19:  'setActive' is assigned a value but never used  no-unused-vars
+  Line 29:26:  Missing '()' invoking a constructor             new-parens
+
+src\components\Header\Header.jsx
+  Line 15:12:  'showTrading' is assigned a value but never used     no-unused-vars
+  Line 15:24:  'setShowTrading' is assigned a value but never used  no-unused-vars
+
+src\components\Livechart.jsx
+  Line 70:9:  Using target="_blank" without rel="noreferrer" (which implies rel="noopener") is a security risk in older browsers: see https://mathiasbynens.github.io/rel-noopener/#recommendations  react/jsx-no-target-blank
+
+src\components\MobileDropdown.jsx
+  Line 40:11:  React Hook useEffect has missing dependencies: 'navigate' and 'route'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\WithdrawReview.jsx
+  Line 9:19:   'setActive' is assigned a value but never used                                                                              no-unused-vars
+  Line 11:19:  'setAmount' is assigned a value but never used                                                                              no-unused-vars
+  Line 19:7:   React Hook useEffect has missing dependencies: 'Active' and 'navigate'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\WithdrawalLogs.jsx
+  Line 4:8:   'Userdashboardheader' is defined but never used                                                                            no-unused-vars
+  Line 33:5:  React Hook useEffect has missing dependencies: 'navigate' and 'route'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\about\About.jsx
+  Line 4:8:    'TradingViewWidget' is defined but never used  no-unused-vars
+  Line 10:11:  'navigate' is assigned a value but never used  no-unused-vars
+
+src\components\admindashboard\Admindashboard.jsx
+  Line 64:6:  React Hook useEffect has missing dependencies: 'fetchTraders' and 'fetchUsers'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\contact\Contact.jsx
+  Line 3:9:    'BsFillWalletFill' is defined but never used  no-unused-vars
+  Line 3:27:   'BsWhatsapp' is defined but never used        no-unused-vars
+  Line 4:9:    'FaPhone' is defined but never used           no-unused-vars
+  Line 4:17:   'FaTelegramPlane' is defined but never used   no-unused-vars
+  Line 5:9:    'AiOutlineMail' is defined but never used     no-unused-vars
+  Line 11:11:  'Toast' is assigned a value but never used    no-unused-vars
+
+src\components\copytrade\Copytrade.jsx
+  Line 5:11:   'navigate' is assigned a value but never used                                                              no-unused-vars
+  Line 21:13:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\components\deposit\Deposit.jsx
+  Line 4:8:    'Userdashboardheader' is defined but never used                                                                            no-unused-vars
+  Line 29:7:   React Hook useEffect has missing dependencies: 'navigate' and 'route'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 36:70:  Expected '!==' and instead saw '!='                                                                                        eqeqeq
+
+src\components\forgotpassword\ForgotPassword.jsx
+  Line 1:26:   'useEffect' is defined but never used          no-unused-vars
+  Line 3:10:   'Link' is defined but never used               no-unused-vars
+  Line 10:12:  'navigate' is assigned a value but never used  no-unused-vars
+
+src\components\invesments\Investments.jsx
+  Line 31:5:  React Hook useEffect has missing dependencies: 'navigate' and 'route'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\mt5\Mt5Section.jsx
+  Line 22:13:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\components\passwordreset\PasswordReset.jsx
+  Line 4:20:   'useEffect' is defined but never used          no-unused-vars
+  Line 6:34:   'Link' is defined but never used               no-unused-vars
+  Line 13:19:  'setEmail' is assigned a value but never used  no-unused-vars
+  Line 19:11:  'navigate' is assigned a value but never used  no-unused-vars
+  Line 38:21:  'req' is assigned a value but never used       no-unused-vars
+
+src\components\plans\Plan.jsx
+  Line 4:23:  'Link' is defined but never used                           no-unused-vars
+  Line 7:28:  'setWithdrawalMethods' is assigned a value but never used  no-unused-vars
+
+src\components\review\Review.jsx
+  Line 1:16:  'useRef' is defined but never used    no-unused-vars
+  Line 1:23:  'useState' is defined but never used  no-unused-vars
+
+src\components\userdashboardCopytrade\UserdashboardCopytrade.jsx
+  Line 4:31:  'useRef' is defined but never used  no-unused-vars
+
+src\components\userdashboardLiveTrading\UserdashboardLiveTrading.jsx
+  Line 4:31:  'useRef' is defined but never used  no-unused-vars
+
+src\components\userdashboardRanking\UserdashboardRanking.jsx
+  Line 4:31:  'useRef' is defined but never used  no-unused-vars
+
+src\components\userdashboardTraders\UserdashboardTraders.jsx
+  Line 5:31:   'useRef' is defined but never used                                                                                               no-unused-vars
+  Line 96:10:  React Hook useEffect has missing dependencies: 'fetchTraders' and 'getData'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\userdashboardfundaccount\Userdashboardfundaccount.jsx
+  Line 2:9:    'Link' is defined but never used         no-unused-vars
+  Line 7:10:   'Swiper' is defined but never used       no-unused-vars
+  Line 7:18:   'SwiperSlide' is defined but never used  no-unused-vars
+  Line 16:10:  'Pagination' is defined but never used   no-unused-vars
+  Line 16:22:  'Navigation' is defined but never used   no-unused-vars
+  Line 16:34:  'FreeMode' is defined but never used     no-unused-vars
+
+src\components\userdashboardheader\Userdashboardheader.jsx
+  Line 15:12:  'userData' is assigned a value but never used                                                                              no-unused-vars
+  Line 17:11:  'logout' is assigned a value but never used                                                                                no-unused-vars
+  Line 40:7:   React Hook useEffect has missing dependencies: 'navigate' and 'route'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 43:12:  'bgColor' is assigned a value but never used                                                                               no-unused-vars
+
+src\components\userdashboardhomepage\Userdashboardhomepage.jsx
+  Line 22:11:  'copy' is assigned a value but never used                                                                 no-unused-vars
+  Line 84:8:   React Hook useEffect has a missing dependency: 'today'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\userdashboardplans\Userdashboardplans.jsx
+  Line 4:8:    'Checkout' is defined but never used                       no-unused-vars
+  Line 17:34:  'FreeMode' is defined but never used                       no-unused-vars
+  Line 22:10:  'checkoutPage' is assigned a value but never used          no-unused-vars
+  Line 22:23:  'setCheckoutPage' is assigned a value but never used       no-unused-vars
+  Line 29:26:  'setWithdrawalMethods' is assigned a value but never used  no-unused-vars
+
+src\components\userdashboardreferrals\Userdashboardreferrals.jsx
+  Line 40:3:  React Hook useEffect has missing dependencies: 'navigate' and 'route'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\userdashboardtransactions\Userdashboardtransactions.jsx
+  Line 38:6:  React Hook useEffect has missing dependencies: 'navigate' and 'route'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\userdashboardwithdraw\Userdashboardwithdraw.jsx
+  Line 2:9:    'Link' is defined but never used                                                                                           no-unused-vars
+  Line 5:10:   'Swiper' is defined but never used                                                                                         no-unused-vars
+  Line 5:18:   'SwiperSlide' is defined but never used                                                                                    no-unused-vars
+  Line 10:10:  'Pagination' is defined but never used                                                                                     no-unused-vars
+  Line 10:22:  'Navigation' is defined but never used                                                                                     no-unused-vars
+  Line 10:34:  'FreeMode' is defined but never used                                                                                       no-unused-vars
+  Line 47:3:   React Hook useEffect has missing dependencies: 'navigate' and 'route'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\components\videoframe\Videoframe.jsx
+  Line 3:8:   'Marketdatawidget' is defined but never used   no-unused-vars
+  Line 4:10:  'Navigate' is defined but never used           no-unused-vars
+  Line 7:9:   'navigate' is assigned a value but never used  no-unused-vars
+
+src\components\why\Why.jsx
+  Line 3:10:  'FaUserPlus' is defined but never used   no-unused-vars
+  Line 4:10:  'FaChartLine' is defined but never used  no-unused-vars
+
+src\pages\Aboutpage.jsx
+  Line 11:9:  'motion' is defined but never used  no-unused-vars
+
+src\pages\Buybitcoin.jsx
+  Line 3:8:  'About' is defined but never used  no-unused-vars
+
+src\pages\Home.jsx
+  Line 3:8:   'Plan' is defined but never used        no-unused-vars
+  Line 4:8:   'About' is defined but never used       no-unused-vars
+  Line 9:8:   'Faqcard' is defined but never used     no-unused-vars
+  Line 10:8:  'Videoframe' is defined but never used  no-unused-vars
+
+src\pages\Login.jsx
+  Line 1:26:  'useEffect' is defined but never used  no-unused-vars
+
+src\pages\Signup.jsx
+  Line 245:9:  'handleCheckboxChange' is assigned a value but never used  no-unused-vars
+  Line 249:9:  'checkDetails' is assigned a value but never used          no-unused-vars
+
+src\pages\VerifyEmail.jsx
+  Line 5:10:   'IoMdMailUnread' is defined but never used                                                                no-unused-vars
+  Line 12:11:  'navigate' is assigned a value but never used                                                             no-unused-vars
+  Line 38:7:   React Hook useEffect has a missing dependency: 'route'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src\pages\bonds\Bonds.jsx
+  Line 7:8:    'Forexheatmap' is defined but never used                                                                   no-unused-vars
+  Line 32:33:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\pages\commodities\Commodities.jsx
+  Line 7:8:    'Forexheatmap' is defined but never used                                                                   no-unused-vars
+  Line 8:8:    'Forexcrossmaps' is defined but never used                                                                 no-unused-vars
+  Line 33:33:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\pages\copytrade\CopytradePage.jsx
+  Line 8:23:   'Link' is defined but never used                           no-unused-vars
+  Line 11:9:   'navigate' is assigned a value but never used              no-unused-vars
+  Line 12:30:  'setWithdrawalMethods' is assigned a value but never used  no-unused-vars
+
+src\pages\forex\Forex.jsx
+  Line 32:17:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\pages\futures\Futures.jsx
+  Line 33:17:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\pages\heatmaps\Heatmaps.jsx
+  Line 11:9:  'navigate' is assigned a value but never used  no-unused-vars
+
+src\pages\indices\Indices.jsx
+  Line 33:17:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\pages\options\Options.jsx
+  Line 31:33:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\pages\stocks\Stocks.jsx
+  Line 33:17:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\pages\technicalAnalysis\TechnicalAnalysisPage.jsx
+  Line 11:9:  'navigate' is assigned a value but never used  no-unused-vars
+
+src\pages\watchlist\Watchlist.jsx
+  Line 11:9:  'navigate' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+File sizes after gzip:
+
+  215.08 kB  build\static\js\main.59467f9d.js
+  29.09 kB   build\static\css\main.526b5ac4.css
+  1.77 kB    build\static\js\453.4863c70a.chunk.js
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
