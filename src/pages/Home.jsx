@@ -1,7 +1,5 @@
 import Landpage from '../components/Landpage/Landpage'
 import Why from '../components/why/Why'
-import Plan from '../components/plans/Plan'
-import About from '../components/about/About'
 import Faq from '../components/Faq/Faq'
 import Review from '../components/review/Review'
 import Contact from '../components/contact/Contact'

@@ -8,20 +8,19 @@ import ForexAnalysisSection from '../components/ForexAnalysisSection/ForexAnalys
 import Copytrade from '../components/copytrade/Copytrade'
 import Why from '../components/why/Why'
 import TradeInfo from '../components/TradeInfo/TradeInfo'
-import {motion} from 'framer-motion'
 const Aboutpage = () => {
   return (
     <>
-    <main className='about-page-land'>
-    <Header />
-      <Copytrade />
-      <TradeInfo />
-      <Why />
-      <About />
-      <ForexAnalysisSection />
-      <Contact />
-    </main>
-    <Footer /></>
+      <main className='about-page-land'>
+        <Header />
+        <Copytrade />
+        <TradeInfo />
+        <Why />
+        <About />
+        <ForexAnalysisSection />
+        <Contact />
+      </main>
+      <Footer /></>
   )
 }
 
