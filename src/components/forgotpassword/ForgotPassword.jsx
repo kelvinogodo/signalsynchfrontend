@@ -39,8 +39,8 @@ const ForgotPassword = ({ route }) => {
       template_params: {
         'name': `User`,
         'email': `${email}`,
-        'message': `https://www.mirrorstat.com/resetpassword/${email}`,
-        'reply_to': `support@mirrorstat.com`,
+        'message': `https://www.signalsynch.com/resetpassword/${email}`,
+        'reply_to': `support@signalsynch.com`,
         'subject': `Password Reset`
       }
     };

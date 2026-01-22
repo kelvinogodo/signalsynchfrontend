@@ -3,7 +3,7 @@ import "./userdashboardheader.css"
 import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { GrLineChart } from "react-icons/gr";
-import { FiAward } from "react-icons/fi";
+import { FiAward, FiUsers } from "react-icons/fi";
 import { GrTransaction } from "react-icons/gr";
 import { MdAddchart } from "react-icons/md";
 import { AiOutlineSafety } from "react-icons/ai";
@@ -76,6 +76,12 @@ const Userdashboardheader = ({ route }) => {
                             <FiAward />
                         </div>
                         <Link to='/ranking'>ranking</Link>
+                    </li>
+                    <li className="dashboard-links">
+                        <div className="dashboard-svg-container">
+                            <FiUsers />
+                        </div>
+                        <Link to='/referrals'>referrals</Link>
                     </li>
                     <li className="dashboard-links">
                         <div className="dashboard-svg-container">

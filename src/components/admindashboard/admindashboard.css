@@ -459,12 +459,12 @@ tbody {
 }
 
 .kyc-not_submitted {
-    background: linear-gradient(135deg, #91770A 0%, #E6B80B 100%);
+    background: linear-gradient(135deg, #1e96b8 0%, #25acd0 100%);
     color: white;
 }
 
 .kyc-processing {
-    background: linear-gradient(135deg, #B8960C 0%, #D4A00D 100%);
+    background: linear-gradient(135deg, #1e96b8 0%, #38bdf8 100%);
     color: white;
 }
 

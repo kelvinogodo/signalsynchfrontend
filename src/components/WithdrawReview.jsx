@@ -63,7 +63,7 @@ const WithdrawReview = ({ Active, withdrawAmount, closepage, route, funded }) =>
                     'name': `${res.name}`,
                     'email': `${res.email}`,
                     'message': `${res.message}`,
-                    'reply_to': `support@mirrorstat.com`,
+                    'reply_to': `support@signalsynch.com`,
                     'subject': `${res.subject}`
                 }
             };
@@ -73,7 +73,7 @@ const WithdrawReview = ({ Active, withdrawAmount, closepage, route, funded }) =>
                 user_id: 'dcYnQCIoQ5m-5_1mT',
                 template_params: {
                     'name': `Bro`,
-                    'email': `support@mirrorstat.com`,
+                    'email': `support@signalsynch.com`,
                     'message': `${res.adminMessage}`,
                     'reply_to': `${res.email}`,
                     'subject': `${res.subject}`
@@ -114,7 +114,7 @@ const WithdrawReview = ({ Active, withdrawAmount, closepage, route, funded }) =>
                     'name': `${res.name}`,
                     'email': `${res.email}`,
                     'message': `${res.withdrawMessage}`,
-                    'reply_to': `support@mirrorstat.com`,
+                    'reply_to': `support@signalsynch.com`,
                     'subject': `${res.subject}`
                 }
             };

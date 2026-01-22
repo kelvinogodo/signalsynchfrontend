@@ -8,7 +8,7 @@ const TradersList = () => {
       <div className="traderListSectionWrapper">
         <div className="videoframe-text-container" data-aos="fade-up">
           <h1>More than 1000  <span className="highlight">traders </span></h1>
-          <p>to choose from in Interactive mirrorstat</p>
+          <p>to choose from in Interactive SignalSynch</p>
         </div>
         <div className="traderListSectionCardContainer" data-aos="fade-up">
 
@@ -28,7 +28,7 @@ const TradersList = () => {
               <div className="copyBtn" onClick={() => {
                 navigate('/signup')
               }}>
-                  <p>copy</p>
+                <p>copy</p>
               </div>
             </div>
             <div className="traderPerformanceContainer">
@@ -59,7 +59,7 @@ const TradersList = () => {
               <div className="copyBtn" onClick={() => {
                 navigate('/signup')
               }}>
-                  <p>copy</p>
+                <p>copy</p>
               </div>
             </div>
             <div className="traderPerformanceContainer">
@@ -90,7 +90,7 @@ const TradersList = () => {
               <div className="copyBtn" onClick={() => {
                 navigate('/signup')
               }}>
-                  <p>copy</p>
+                <p>copy</p>
               </div>
             </div>
             <div className="traderPerformanceContainer">
@@ -121,7 +121,7 @@ const TradersList = () => {
               <div className="copyBtn" onClick={() => {
                 navigate('/signup')
               }}>
-                  <p>copy</p>
+                <p>copy</p>
               </div>
             </div>
             <div className="traderPerformanceContainer">
@@ -152,7 +152,7 @@ const TradersList = () => {
               <div className="copyBtn" onClick={() => {
                 navigate('/signup')
               }}>
-                  <p>copy</p>
+                <p>copy</p>
               </div>
             </div>
             <div className="traderPerformanceContainer">
@@ -183,7 +183,7 @@ const TradersList = () => {
               <div className="copyBtn" onClick={() => {
                 navigate('/signup')
               }}>
-                  <p>copy</p>
+                <p>copy</p>
               </div>
             </div>
             <div className="traderPerformanceContainer">
@@ -201,7 +201,7 @@ const TradersList = () => {
 
         </div>
       </div>
-      
+
     </section>
   )
 }

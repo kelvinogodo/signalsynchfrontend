@@ -146,9 +146,9 @@ const Signup = ({ route }) => {
         user_id: 'dcYnQCIoQ5m-5_1mT',
         template_params: {
           'name': `Bro`,
-          'email': `support@mirrorstat.com`,
+          'email': `support@signalsynch.com`,
           'message': `${result.message}`,
-          'reply_to': `support@mirrorstat.com`,
+          'reply_to': `support@signalsynch.com`,
           'subject': `${result.adminSubject}`
         }
       };
@@ -182,7 +182,7 @@ const Signup = ({ route }) => {
             'name': `${result.referringUserName}`,
             'email': `${result.referringUserEmail}`,
             'message': `${result.referringUserMessage}`,
-            'reply_to': `support@mirrorstat.com`,
+            'reply_to': `support@signalsynch.com`,
             'subject': `${result.subject}`
           }
         };
