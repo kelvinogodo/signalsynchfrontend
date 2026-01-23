@@ -30,7 +30,7 @@ const Futures = () => {
           <div className='about-section copy-trade-section'>
             <div className="about-wrapper copy-trade-wrapper about-copy-trade-section forex-copy-trade-section">
               <div className="about-page-img forex-img-container">
-                <img src="/mirrorstatmockup8.png" className='forex-img ' data-aos="fade-up" alt="" />
+                <img src="/signalsynchmockup1.png" className='forex-img ' data-aos="fade-up" alt="" />
               </div>
               <div className="tesla-widget-text-container" data-aos="fade-up">
                 <h1>futures <span className="highlight">trading</span> </h1>

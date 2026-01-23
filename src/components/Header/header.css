@@ -221,7 +221,7 @@ nav ul li a {
         justify-content: center;
     }
     .show-markets{
-        height: 230px;
+        height: 320px;
         transition: .2s all ease-in;
     }
     .show-markets .market-dropdown-svg-container svg{

@@ -19,7 +19,7 @@ const Mt5Section = () => {
           </button>
         </div>
         <div className="about-img-container mt5-img" data-aos="fade-up">
-          <img src="/mirrorstatmockup12.png" className='forex-img ' alt="" />
+          <img src="/signalsynchmockup5.png" className='forex-img ' alt="" />
         </div>
       </div>
     </div>
