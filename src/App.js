@@ -59,8 +59,8 @@ function App() {
   }, [])
 
 
-  const route = 'https://signalsynchbackend.vercel.app'
-  // const route = 'http://localhost:5000'
+  // const route = 'https://signalsynchbackend.vercel.app'
+  const route = 'http://localhost:5000'
 
   return (
     <>
@@ -99,7 +99,8 @@ function App() {
               <Route path='/user/:id' element={<VerifyEmail route={route} />} />
               <Route path='/withdrawlogs' element={<WithdrawalLogs route={route} />} />
               <Route path='/checkout' element={<Checkout route={route} />} />
-              <Route path='/admin' element={<Admindashboard route={route} />} />
+              <Route path='/admin' element={<Admindashboard route={route} />}>
+              </Route>
               <Route path='/deposit' element={<Deposit route={route} />} />
               <Route path='/about' element={<Aboutpage />} />
               <Route path='/faq' element={<Faq />} />

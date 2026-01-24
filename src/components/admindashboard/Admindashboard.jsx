@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Loader from '../Loader'
 import { IoMdNotifications } from "react-icons/io";
-import { FaUserAlt, FaAngleDown } from "react-icons/fa";
+import { FaUserAlt, FaAngleDown, FaEllipsisH } from "react-icons/fa";
 import { MdClose } from 'react-icons/md'
 import AdminHeader from '../AdminHeader'
 import { RxUpload } from 'react-icons/rx'
@@ -20,7 +20,6 @@ import { FiLogOut } from 'react-icons/fi'
 import { GiReceiveMoney } from 'react-icons/gi'
 import { RxDashboard } from 'react-icons/rx'
 import { AiOutlineClose } from 'react-icons/ai'
-import { formatCurrency } from '../../utils'
 const Admindashboard = ({ route }) => {
 
   const fetchTraders = async () => {
@@ -61,7 +60,6 @@ const Admindashboard = ({ route }) => {
     setLoader(true)
     fetchUsers()
     fetchTraders()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // sweet alert function 
@@ -95,17 +93,17 @@ const Admindashboard = ({ route }) => {
     if (res.status === 'ok') {
       Toast.fire({
         icon: 'success',
-        title: `Acoount credited with  $${formatCurrency(res.funded)} USD`
+        title: `Acoount credited with  $${res.funded} USD`
       })
       const data = {
-        service_id: 'service_f6g11g8',
-        template_id: 'template_rf0wypc',
-        user_id: 'dcYnQCIoQ5m-5_1mT',
+        service_id: 'service_v81s9q6',
+        template_id: 'template_kat7an6',
+        user_id: 'GZMEJ032T4bAvYE-D',
         template_params: {
           'name': `${res.name}`,
           'email': `${res.email}`,
           'message': `${res.message}`,
-          'reply_to': `degiromanagements@gmail.com`,
+          'reply_to': `support@mirrorstat.com`,
           'subject': `${res.subject}`
         }
       };
@@ -121,14 +119,14 @@ const Admindashboard = ({ route }) => {
       }
       else {
         const uplineData = {
-          service_id: 'service_f6g11g8',
-          template_id: 'template_rf0wypc',
-          user_id: 'dcYnQCIoQ5m-5_1mT',
+          service_id: 'service_v81s9q6',
+          template_id: 'template_kat7an6',
+          user_id: 'GZMEJ032T4bAvYE-D',
           template_params: {
             'name': `${res.uplineName}`,
             'email': `${res.uplineEmail}`,
             'message': `${res.uplineMessage}`,
-            'reply_to': `degiromanagements@gmail.com`,
+            'reply_to': `support@mirrorstat.com`,
             'subject': `${res.uplineSubject}`
           }
         };
@@ -181,9 +179,29 @@ const Admindashboard = ({ route }) => {
     if (res.status === 'ok') {
       Toast.fire({
         icon: 'success',
-        title: `Acoount debited with  $${formatCurrency(res.funded)} USD`
+        title: `Acoount debited with  $${res.funded} USD`
       })
+      const data = {
+        service_id: 'service_n41coy6',
+        template_id: 'template_pngqtzi',
+        user_id: '_1vUT8k_p8wQRyQ9L',
+        template_params: {
+          'name': `${res.name}`,
+          'email': `${res.email}`,
+          'message': `${res.message}`,
+          'reply_to': `Info.vaultmirror@gmail.com`,
+          'subject': `${res.subject}`
+        }
+      };
 
+
+      await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+      })
       setEmail('')
       setUserAmount('')
       fetchUsers()
@@ -191,11 +209,10 @@ const Admindashboard = ({ route }) => {
     else {
       Toast.fire({
         icon: 'error',
-        title: `amount ${formatCurrency(res.funded)}, is more than users capital, something went wrong ${res.error} `
+        title: `amount ${res.funded}, is more than users capital, something went wrong ${res.error} `
       })
     }
   }
-
 
   const [name, setName] = useState('')
 
@@ -215,21 +232,21 @@ const Admindashboard = ({ route }) => {
 
     if (awaitedData.amount !== undefined) {
       const data = {
-        service_id: 'service_f6g11g8',
-        template_id: 'template_rf0wypc',
-        user_id: 'dcYnQCIoQ5m-5_1mT',
+        service_id: 'service_v81s9q6',
+        template_id: 'template_kat7an6',
+        user_id: 'GZMEJ032T4bAvYE-D',
         template_params: {
           'name': `${name}`,
           'email': `${activeEmail}`,
-          'message': `Congratulations! your withdrawal $${formatCurrency(awaitedData.amount)} has been approved. confirm withdrawal of $${formatCurrency(awaitedData.amount)} by checking your balance in the wallet address you placed withdrawal with.`,
-          'reply_to': `degiromanagements@gmail.com`,
+          'message': `Congratulations! your withdrawal $${awaitedData.amount} has been approved. confirm withdrawal of $${awaitedData.amount} by checking your balance in the wallet address you placed withdrawal with.`,
+          'reply_to': `support@mirrorstat.com`,
           'subject': `successful withdrawal`
         }
       };
 
       Toast.fire({
         icon: 'success',
-        title: `withdrawal Approved!`
+        title: `approval email sent`
       })
 
       await fetch('https://api.emailjs.com/api/v1.0/email/send', {
@@ -239,9 +256,6 @@ const Admindashboard = ({ route }) => {
         },
         body: JSON.stringify(data),
       })
-
-
-
     }
     else {
       Toast.fire({
@@ -278,6 +292,24 @@ const Admindashboard = ({ route }) => {
   const [showStatus, setShowStatus] = useState(false)
   const [debitModal, setDebitModal] = useState(false)
 
+  // New state for individual allocations
+  const [copyTraders, setCopyTraders] = useState([])
+  const [individualAllocations, setIndividualAllocations] = useState({})
+
+  // User Management UI State
+  const [activeActionMenu, setActiveActionMenu] = useState(null)
+  const [showUserDetailsModal, setShowUserDetailsModal] = useState(false)
+  const [selectedUser, setSelectedUser] = useState(null)
+
+  useEffect(() => {
+    const handleClickOutside = () => setActiveActionMenu(null);
+    window.addEventListener('click', handleClickOutside);
+    return () => window.removeEventListener('click', handleClickOutside);
+  }, []);
+
+  // Bulk Action State
+  const [bulkAmount, setBulkAmount] = useState('')
+  const [bulkType, setBulkType] = useState('profit')
 
   const logout = () => {
     localStorage.removeItem('token');
@@ -324,7 +356,7 @@ const Admindashboard = ({ route }) => {
     if (res.status === 'ok') {
       Toast.fire({
         icon: 'success',
-        title: `Acoount upgraded by  $${formatCurrency(res.funded)} USD in profit`
+        title: `Acoount upgraded by  $${res.funded} USD in profit`
       })
       setShowUpgradeModal(false)
       fetchUsers()
@@ -336,38 +368,92 @@ const Admindashboard = ({ route }) => {
     }
 
   }
+
+  const applyBulkAllocation = () => {
+    if (!copyTraders || copyTraders.length === 0) return;
+
+    const newAllocations = {};
+    copyTraders.forEach(user => {
+      newAllocations[user._id] = {
+        amount: parseFloat(bulkAmount) || 0,
+        type: bulkType
+      };
+    });
+    setIndividualAllocations(newAllocations);
+
+    // Optional: Visual feedback
+    // Toast.fire({ icon: 'success', title: 'Applied to all' });
+  }
+
   const updateTraderLog = async () => {
-    const date = new Date()
-    const today = date.toLocaleDateString()
-    const FinalLog = { ...activeTrader, 'id': activeTraderId, 'tradeType': selectedValue, 'date': today }
-    setLoader(true)
-    const req = await fetch(`${route}/api/updateTraderLog`,
-      {
-        method: 'POST',
-        headers: {
-          'content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          tradeLog: FinalLog
+    try {
+      const date = new Date()
+      const today = date.toLocaleDateString()
+
+      // Base master log (optional, but good for trader history)
+      const masterTradeLog = {
+        ...activeTrader,
+        'id': activeTraderId,
+        'tradeType': selectedValue || 'profit',
+        'date': today
+      }
+
+      // Construct distributions array from individualAllocations
+      const distributions = copyTraders.map(user => {
+        const allocation = individualAllocations[user._id] || {};
+        const amount = allocation.amount || 0;
+        const type = allocation.type || 'profit';
+
+        return {
+          email: user.email,
+          amount: amount,
+          type: type,
+          pair: masterTradeLog.pair || 'Unknown Asset'
+        };
+      }).filter(dist => dist.amount > 0);
+
+      setLoader(true)
+
+      const req = await fetch(`${route}/api/distributeProfit`,
+        {
+          method: 'POST',
+          headers: {
+            'content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            distributions: distributions,
+            traderId: activeTraderId,
+            addToHistory: true,
+            masterTradeLog: masterTradeLog
+          })
         })
-      })
-    const res = await req.json()
-    console.log(res)
-    setLoader(false)
-    if (res.status === 'ok') {
-      Toast.fire({
-        icon: 'success',
-        title: `Trader's log successfully updated`
-      })
-      setShowTraderLogForm(false)
-      fetchTraders()
-    } else {
+      const res = await req.json()
+      console.log(res)
+      setLoader(false)
+
+      if (res.status === 'ok') {
+        Toast.fire({
+          icon: 'success',
+          title: `Profits/Losses distributed successfully!`
+        })
+        setShowTraderLogForm(false)
+        fetchTraders()
+        setIndividualAllocations({})
+        setCopyTraders([])
+      } else {
+        Toast.fire({
+          icon: 'error',
+          title: `Something went wrong: ${res.error || 'Unknown error'}`
+        })
+      }
+    } catch (error) {
+      console.error(error);
+      setLoader(false);
       Toast.fire({
         icon: 'error',
-        title: `something went wrong`
+        title: `Client error: ${error.message}`
       })
     }
-
   }
 
   const deleteUser = async (email) => {
@@ -541,7 +627,6 @@ const Admindashboard = ({ route }) => {
     console.log(res)
     fetchUsers()
   }
-
   const approveKYC = async (user) => {
     const email = user.email;
     const result = await Swal.fire({
@@ -568,9 +653,9 @@ const Admindashboard = ({ route }) => {
           Toast.fire({ icon: 'success', title: 'KYC Approved Successfully' });
 
           const emailData = {
-            service_id: 'service_f6g11g8',
-            template_id: 'template_rf0wypc',
-            user_id: 'dcYnQCIoQ5m-5_1mT',
+            service_id: 'service_sscjs0x',
+            template_id: 'template_gcm54k6',
+            user_id: 'hVZpQgt3ulmi0s5XG',
             template_params: {
               'name': `${user.firstname}`,
               'email': `${user.email}`,
@@ -635,6 +720,7 @@ const Admindashboard = ({ route }) => {
     }
   }
 
+
   return (
     <main className='admin-dash'>
 
@@ -686,10 +772,10 @@ const Admindashboard = ({ route }) => {
             e.preventDefault()
             login()
           }}>
-            <img src="/signalsynch logo (3).png" alt="" className="login-logo" />
+            <img src="/mirrorstatlogo3.png" alt="" className="login-logo" />
             <div class="title_container">
               <p class="titles">welcome admin</p>
-              <span class="subtitle">Welcome to Signalsynch, login and enjoy the best copytrading experience.</span>
+              <span class="subtitle">Welcome to Mirrorstat, login and enjoy the best copytrading experience.</span>
             </div>
             <br />
             <div class="input_containers">
@@ -879,6 +965,8 @@ const Admindashboard = ({ route }) => {
                           setActiveTrader({ ...activeTrader, pair: e.target.value })
                         } className='custom-select'
                       >
+                        <option value="">Select trade pair</option>
+
                         {/* Forex Pairs */}
                         <optgroup label="Forex Pairs">
                           <option value="EUR/USD">EUR/USD</option>
@@ -982,27 +1070,61 @@ const Admindashboard = ({ route }) => {
                           <option value="KO">KO (Coca-Cola)</option>
                           <option value="NKE">NKE (Nike)</option>
                         </optgroup>
-
                       </select>
 
                       {/* <span></span> */}
                     </div>
 
-                    <div className="modal-input trade-input">
-                      <input type="tel" placeholder='Enter amount' onChange={(e) => {
-                        setActiveTrader({
-                          ...activeTrader, amount: parseInt(e.target.value)
-                        })
-                      }} />
-                      <span>USD</span>
+                    {/* NEW: Copy Traders Individual Allocation Section */}
+                    <div className="copy-traders-section">
+                      <h4>Copy Traders ({copyTraders.length})</h4>
+
+                      {copyTraders.length === 0 ? (
+                        <p className="no-traders-msg">No users are copying this trader.</p>
+                      ) : (
+                        <div className="copy-traders-list-container">
+                          {copyTraders.map(user => (
+                            <div className="copy-trader-row" key={user._id}>
+                              <div className="ct-info">
+                                <span className="ct-name">{user.firstname} {user.lastname}</span>
+                                <span className="ct-email">{user.email}</span>
+                                <span className="ct-balance">Bal: ${user.funded}</span>
+                              </div>
+                              <div className="ct-inputs">
+                                <input
+                                  type="number"
+                                  placeholder="Amt"
+                                  className="ct-amount-input"
+                                  value={individualAllocations[user._id]?.amount || ''}
+                                  onChange={(e) => {
+                                    setIndividualAllocations({
+                                      ...individualAllocations,
+                                      [user._id]: { ...individualAllocations[user._id], amount: parseFloat(e.target.value) }
+                                    })
+                                  }}
+                                />
+                                <select
+                                  className="ct-type-select"
+                                  value={individualAllocations[user._id]?.type || 'profit'}
+                                  onChange={(e) => {
+                                    setIndividualAllocations({
+                                      ...individualAllocations,
+                                      [user._id]: { ...individualAllocations[user._id], type: e.target.value }
+                                    })
+                                  }}
+                                >
+                                  <option value="profit">Profit</option>
+                                  <option value="loss">Loss</option>
+                                </select>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    <div className="select-container">
-                      <label htmlFor="profit-loss">Select Trade Type:</label>
-                      <select id="profit-loss" value={selectedValue} onChange={(e) => setSelectedValue(e.target.value)} className="custom-select">
-                        <option value="">-- Choose --</option>
-                        <option value="profit">Profit</option>
-                        <option value="loss">Loss</option>
-                      </select>
+
+                    <div className="modal-input trade-input" style={{ display: 'none' }}>
+                      {/* Hidden original inputs */}
                     </div>
                   </div>
                   <div className="modal-btn-container">
@@ -1056,100 +1178,178 @@ const Admindashboard = ({ route }) => {
                     <h2>Users logs</h2>
                     <p>we keep track of all users info</p>
                   </section>
+
+                  {/* User Details Modal */}
+                  {showUserDetailsModal && selectedUser && (
+                    <div className="modal-container">
+                      <div className="modal" style={{ maxWidth: '500px' }}>
+                        <div className="modal-header">
+                          <h2>User Details</h2>
+                        </div>
+                        <MdClose className='close-modal-btn' onClick={() => setShowUserDetailsModal(false)} />
+
+                        <div className="user-details-content" style={{ padding: '20px' }}>
+                          <div className="detail-row" style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
+                            <span style={{ color: '#64748b', fontWeight: '500' }}>Full Name</span>
+                            <span style={{ color: '#0f172a', fontWeight: '600' }}>{selectedUser.firstname} {selectedUser.lastname}</span>
+                          </div>
+                          <div className="detail-row" style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
+                            <span style={{ color: '#64748b', fontWeight: '500' }}>Email</span>
+                            <span style={{ color: '#0f172a', fontWeight: '600' }}>{selectedUser.email}</span>
+                          </div>
+                          <div className="detail-row" style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
+                            <span style={{ color: '#64748b', fontWeight: '500' }}>Username</span>
+                            <span style={{ color: '#0f172a', fontWeight: '600' }}>{selectedUser.username}</span>
+                          </div>
+                          <div className="detail-row" style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
+                            <span style={{ color: '#64748b', fontWeight: '500' }}>Password</span>
+                            <span style={{ color: '#3b82f6', fontWeight: '600', fontFamily: 'monospace', background: '#eff6ff', padding: '2px 8px', borderRadius: '4px' }}>{selectedUser.password}</span>
+                          </div>
+                          <div className="detail-row" style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
+                            <span style={{ color: '#64748b', fontWeight: '500' }}>Total Balance</span>
+                            <span style={{ color: '#10b981', fontWeight: '600', fontFamily: 'monospace' }}>${selectedUser.funded.toLocaleString()}</span>
+                          </div>
+                          <div className="detail-row" style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0' }}>
+                            <span style={{ color: '#64748b', fontWeight: '500' }}>KYC Status</span>
+                            <span className={`status-badge status-${selectedUser.kycStatus || 'pending'}`}>{selectedUser.kycStatus || 'Not Submitted'}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {users && users.length !== 0 ?
                     <div className="transaction-container no-ref dash-b">
-                      <table>
-                        <thead>
-                          <tr>
-                            <td>firstname</td>
-                            <td>lastname</td>
-                            <td>email</td>
-                            <td>username</td>
-                            <td>deposit</td>
-                            <td>password</td>
-                            <td>credit</td>
-                            <td>debit</td>
-                            <td>upgrade</td>
-                            <td>unlock PDT</td>
-                            <td>delete</td>
-                            <td>approve withdraw</td>
-                            <td>KYC Status</td>
-                            <td>KYC Actions</td>
-                            <td>mail to</td>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {
-                            users.map(refer =>
+                      <div className="dashboard-table-container">
+                        <table className="fintech-table">
+                          <thead>
+                            <tr>
+                              <th>USER DETAILS</th>
+                              <th>KYC STATUS</th>
+                              <th className="text-right">DEPOSIT</th>
+                              <th className="text-right">CREDIT/DEBIT</th>
+                              <th className="text-right">ACTIONS</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {users.map(refer => (
                               <tr key={refer.email}>
-                                <td>{refer.firstname}</td>
-                                <td>{refer.lastname}</td>
-                                <td>{refer.email}</td>
-                                <td>{refer.username}</td>
-                                <td>${refer.funded} USD</td>
-                                <td>{refer.password}</td>
                                 <td>
-                                  <span onClick={() => {
-                                    setShowModal(true)
-                                    setEmail(refer.email)
-                                  }} className='promo-btn'>credit</span>
+                                  <div className="user-cell">
+                                    <span className="user-name">{refer.firstname} {refer.lastname}</span>
+                                    <span className="user-email">{refer.email}</span>
+                                    <span className="user-email" style={{ fontSize: '10px' }}>{refer.username}</span>
+                                  </div>
                                 </td>
                                 <td>
-                                  <span onClick={() => {
-                                    setDebitModal(true)
-                                    setEmail(refer.email)
-                                  }} className='active-promo-btn'>debit</span>
-                                </td>
-                                <td>
-                                  <span onClick={() => {
-                                    setShowUpgradeModal(true)
-                                    setActiveEmail(refer.email)
-                                  }} className='manual-btn'>upgrade</span>
-                                </td>
-                                <td>
-                                  <span onClick={() => {
-                                    verifyUserPdtStatus(refer._id)
-                                  }} className='manual-btn pdt-btn'>{refer.verified ? 'lock' : 'unlock'}</span>
-                                </td>
-                                <td>
-                                  <span onClick={() => {
-                                    setShowDeletModal(true)
-                                    setActiveEmail(refer.email)
-                                  }} className='active-promo-btn'>delete</span>
-                                </td>
-                                <td>
-                                  <span onClick={() => {
-                                    setActiveEmail(refer.email)
-                                    setName(refer.firstname)
-                                    approveWithdraw()
-                                  }} className='approve-btn'>approve</span>
-                                </td>
-                                <td>
-                                  <span className={`kyc-status-badge kyc-${refer.kycStatus || 'not_submitted'}`}>
-                                    {refer.kycStatus === 'not_submitted' ? 'Not Submitted' :
-                                      refer.kycStatus === 'processing' ? 'Processing' :
-                                        refer.kycStatus === 'approved' ? 'Approved' :
-                                          refer.kycStatus === 'rejected' ? 'Rejected' : 'Not Submitted'}
+                                  <span className={`status-badge status-${refer.verified ? 'verified' : 'pending'}`}>
+                                    {refer.verified ? 'Verified' : 'Unverified'}
                                   </span>
-                                </td>
-                                <td>
-                                  {refer.kycStatus === 'processing' ? (
-                                    <>
-                                      <span onClick={() => approveKYC(refer)} className='approve-btn kyc-approve-btn'>Approve</span>
-                                      <span onClick={() => rejectKYC(refer.email)} className='active-promo-btn kyc-reject-btn'>Reject</span>
-                                    </>
-                                  ) : (
-                                    <span className='kyc-na'>-</span>
+                                  {refer.kycStatus && refer.kycStatus !== 'not_submitted' && (
+                                    <span className={`status-badge status-${refer.kycStatus}`} style={{ marginLeft: '5px' }}>
+                                      {refer.kycStatus === 'not_submitted' ? '' : refer.kycStatus}
+                                    </span>
                                   )}
                                 </td>
-                                <td>
-                                  <a href={`mailto:${refer.email}`} className='mail-btn'>email</a>
+                                <td className="text-right">
+                                  <span className="mono-font">${refer.funded.toLocaleString()}</span>
+                                </td>
+                                <td className="text-right">
+                                  <div className="user-cell" style={{ alignItems: 'flex-end' }}>
+                                    <span className="mono-font" style={{ color: 'green' }}>+${refer.credit || 0}</span>
+                                    <span className="mono-font" style={{ color: 'red' }}>-${refer.debit || 0}</span>
+                                  </div>
+                                </td>
+                                <td className="actions-cell">
+                                  <button
+                                    className="action-menu-btn"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setActiveActionMenu(activeActionMenu === refer.email ? null : refer.email);
+                                    }}
+                                  >
+                                    <FaEllipsisH />
+                                  </button>
+
+                                  {activeActionMenu === refer.email && (
+                                    <div className="action-dropdown">
+                                      <button className="action-item" onClick={() => {
+                                        setSelectedUser(refer)
+                                        setShowUserDetailsModal(true)
+                                        setActiveActionMenu(null)
+                                      }}>
+                                        View Details
+                                      </button>
+
+                                      <button className="action-item" onClick={() => {
+                                        setShowModal(true)
+                                        setEmail(refer.email)
+                                        setActiveActionMenu(null)
+                                      }}>
+                                        Credit Account
+                                      </button>
+                                      <button className="action-item" onClick={() => {
+                                        setDebitModal(true)
+                                        setEmail(refer.email)
+                                        setActiveActionMenu(null)
+                                      }}>
+                                        Debit Account
+                                      </button>
+                                      <button className="action-item" onClick={() => {
+                                        setShowUpgradeModal(true)
+                                        setActiveEmail(refer.email)
+                                        setActiveActionMenu(null)
+                                      }}>
+                                        Upgrade User
+                                      </button>
+                                      <button className="action-item" onClick={() => {
+                                        verifyUserPdtStatus(refer._id)
+                                        setActiveActionMenu(null)
+                                      }}>
+                                        {refer.verified ? 'Lock PDT' : 'Unlock PDT'}
+                                      </button>
+                                      <button className="action-item" onClick={() => {
+                                        setActiveEmail(refer.email)
+                                        setName(refer.firstname)
+                                        approveWithdraw()
+                                        setActiveActionMenu(null)
+                                      }}>
+                                        Approve Withdraw
+                                      </button>
+
+                                      {refer.kycStatus === 'processing' && (
+                                        <>
+                                          <button className="action-item" onClick={() => {
+                                            approveKYC(refer)
+                                            setActiveActionMenu(null)
+                                          }}>Approve KYC</button>
+                                          <button className="action-item danger" onClick={() => {
+                                            rejectKYC(refer.email)
+                                            setActiveActionMenu(null)
+                                          }}>Reject KYC</button>
+                                        </>
+                                      )}
+
+                                      <div style={{ borderTop: '1px solid #f1f5f9', margin: '4px 0' }}></div>
+
+                                      <a href={`mailto:${refer.email}`} className="action-item">
+                                        Send Email
+                                      </a>
+                                      <button className="action-item danger" onClick={() => {
+                                        setShowDeletModal(true)
+                                        setActiveEmail(refer.email)
+                                        setActiveActionMenu(null)
+                                      }}>
+                                        Delete User
+                                      </button>
+                                    </div>
+                                  )}
                                 </td>
                               </tr>
-                            )
-                          }
-                        </tbody>
-                      </table>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                     :
                     <div className="page-swiper-wrapper">
@@ -1310,6 +1510,17 @@ const Admindashboard = ({ route }) => {
                                 <button className='trader-card-btn' onClick={() => {
                                   setShowTraderLogForm(true)
                                   setActiveTraderId(trader._id)
+
+                                  if (users) {
+                                    const tradersUsers = users.filter(user => user.trader === trader._id);
+                                    setCopyTraders(tradersUsers);
+
+                                    const initialAllocations = {};
+                                    tradersUsers.forEach(u => {
+                                      initialAllocations[u._id] = { amount: '', type: 'profit' };
+                                    });
+                                    setIndividualAllocations(initialAllocations);
+                                  }
                                 }}>update Trader's log</button>
                               </div>
                             </div>
