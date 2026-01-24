@@ -139,7 +139,7 @@ const AdminHeader = ({route,openCreateTrader,openTraderLogs,openUsers}) => {
         }
         <aside  className='userdashboard-sidebar'>
               <div className="dashboard-logo-container">
-                  <img src="/mirrorstatlogo3.png" alt="" className="dashboard-logo"/>
+                  <img src="/signalsynch logo (3).png" alt="" className="dashboard-logo"/>
             </div>
             <div className='dashboard-links-container'>
                   <li className="dashboard-links" onClick={()=> openUsers()}>
@@ -162,7 +162,7 @@ const AdminHeader = ({route,openCreateTrader,openTraderLogs,openUsers}) => {
                       <div className="dashboard-svg-container">
                           <GrLineChart />
                       </div>
-                    <Link to='/login'>logout</Link>
+                    <Link to='/admin'>logout</Link>
                 </li>
             </div>
         </aside>

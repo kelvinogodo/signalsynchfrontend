@@ -772,7 +772,7 @@ const Admindashboard = ({ route }) => {
             e.preventDefault()
             login()
           }}>
-            <img src="/mirrorstatlogo3.png" alt="" className="login-logo" />
+            <img src="/signalsynch logo (3).png" alt="" className="login-logo" />
             <div class="title_container">
               <p class="titles">welcome admin</p>
               <span class="subtitle">Welcome to Mirrorstat, login and enjoy the best copytrading experience.</span>
