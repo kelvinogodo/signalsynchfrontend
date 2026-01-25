@@ -1069,7 +1069,16 @@ const Admindashboard = ({ route }) => {
                           <option value="DIS">DIS (Disney)</option>
                           <option value="KO">KO (Coca-Cola)</option>
                           <option value="NKE">NKE (Nike)</option>
+                          <option value="MOVE">MOVE</option>
+                          <option value="REVB">REVB</option>
+                          <option value="DRCT">DRCT</option>
+                          <option value="IOTR">IOTR</option>
+                          <option value="HCTI">HCTI</option>
+                          <option value="NAMM">NAMM</option>
+                          <option value="ASTI">ASTI</option>
+                          <option value="IOBT">IOBT</option>
                         </optgroup>
+
                       </select>
 
                       {/* <span></span> */}
@@ -1242,14 +1251,9 @@ const Admindashboard = ({ route }) => {
                                   </div>
                                 </td>
                                 <td>
-                                  <span className={`status-badge status-${refer.verified ? 'verified' : 'pending'}`}>
-                                    {refer.verified ? 'Verified' : 'Unverified'}
+                                  <span className={`status-badge status-${refer.kycStatus || 'pending'}`}>
+                                    {refer.kycStatus ? refer.kycStatus.replace('_', ' ') : 'Not Submitted'}
                                   </span>
-                                  {refer.kycStatus && refer.kycStatus !== 'not_submitted' && (
-                                    <span className={`status-badge status-${refer.kycStatus}`} style={{ marginLeft: '5px' }}>
-                                      {refer.kycStatus === 'not_submitted' ? '' : refer.kycStatus}
-                                    </span>
-                                  )}
                                 </td>
                                 <td className="text-right">
                                   <span className="mono-font">${refer.funded.toLocaleString()}</span>
@@ -1317,18 +1321,14 @@ const Admindashboard = ({ route }) => {
                                         Approve Withdraw
                                       </button>
 
-                                      {refer.kycStatus === 'processing' && (
-                                        <>
-                                          <button className="action-item" onClick={() => {
-                                            approveKYC(refer)
-                                            setActiveActionMenu(null)
-                                          }}>Approve KYC</button>
-                                          <button className="action-item danger" onClick={() => {
-                                            rejectKYC(refer.email)
-                                            setActiveActionMenu(null)
-                                          }}>Reject KYC</button>
-                                        </>
-                                      )}
+                                      <button className="action-item" onClick={() => {
+                                        approveKYC(refer)
+                                        setActiveActionMenu(null)
+                                      }}>Approve KYC</button>
+                                      <button className="action-item danger" onClick={() => {
+                                        rejectKYC(refer.email)
+                                        setActiveActionMenu(null)
+                                      }}>Reject KYC</button>
 
                                       <div style={{ borderTop: '1px solid #f1f5f9', margin: '4px 0' }}></div>
 
